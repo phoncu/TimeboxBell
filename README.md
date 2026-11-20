@@ -1,6 +1,11 @@
 # TimeboxBell
 Windows chime for timeboxing: plays a sound at :00 and :30 plus warnings 7 and 5 minutes before, and keeps your PC awake while running
 
+## Download
+
+Get `TimeboxBell.exe` and `appsettings.json` from the latest [release](https://github.com/phoncu/TimeboxBell/releases)
+(or the `.zip` with both plus the console app), put them in one folder and run the `.exe`. Nothing to install.
+
 ## Usage
 
 `TimeboxBell.exe` runs in the notification area. The icon menu shows the time of the next bell, lets you
@@ -42,4 +47,15 @@ The `appsettings.json` file next to the `.exe` (changes take effect after restar
 pwsh build/smoke-test.ps1        # publishes artifacts/publish/console/TimeboxBell.Console.exe and checks the schedule listing and single instance
 TimeboxBell.Console.exe          # rings according to the schedule and prevents sleep; Ctrl+C exits
 TimeboxBell.Console.exe --list-schedule   # prints the loaded settings and exits
+```
+
+## CI and releases
+
+GitHub Actions builds the solution and runs the unit, integration and smoke tests on every push and pull request.
+Pushing a `vX.Y.Z` tag runs the tests again, publishes the single-file `.exe`s and creates a **draft** release.
+Sleep, wake-up and display behaviour can't be tested automatically, so the draft is published only after
+the manual [release checklist](docs/release-checklist.md) passes.
+
+```powershell
+git tag v1.0.0; git push origin v1.0.0
 ```

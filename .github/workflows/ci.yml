@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: ['**'] # tagy řeší release.yml, který tento workflow volá sám
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build
+        run: dotnet build TimeboxBell.sln -c Release --nologo
+
+      - name: Unit and integration tests
+        run: dotnet test TimeboxBell.sln -c Release --no-build --nologo --logger "trx" --results-directory test-results
+
+      - name: Smoke test
+        shell: pwsh
+        run: ./build/smoke-test.ps1
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results
+          if-no-files-found: ignore
