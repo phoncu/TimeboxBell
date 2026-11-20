@@ -1,6 +1,6 @@
 namespace TimeboxBell.Core;
 
-/// <summary>Druh zvonění. Každý druh bude mít později vlastní zvuk.</summary>
+/// <summary>Druh zvonění. Každý druh má vlastní zvuk (viz <see cref="BellSounds"/>).</summary>
 public enum BellType
 {
     /// <summary>Varování, že se blíží konec slotu (výchozí :23 a :53).</summary>

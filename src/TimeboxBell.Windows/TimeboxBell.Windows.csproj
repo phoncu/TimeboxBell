@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>TimeboxBell.Windows</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TimeboxBell.Windows.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- System.Media.SoundPlayer (ověření hlavičky WAV + asynchronní PlaySound). -->
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TimeboxBell.Core\TimeboxBell.Core.csproj" />
+  </ItemGroup>
+
+</Project>
