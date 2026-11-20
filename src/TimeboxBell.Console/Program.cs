@@ -6,6 +6,8 @@ namespace TimeboxBell.ConsoleApp;
 
 internal static class Program
 {
+    private const int AlreadyRunningExitCode = 3;
+
     private static readonly TimeSpan CheckInterval = TimeSpan.FromSeconds(5);
 
     private static int Main(string[] args)
@@ -42,6 +44,14 @@ internal static class Program
             return 0;
         }
 
+        using var instance = SingleInstance.TryAcquire();
+        if (instance is null)
+        {
+            Console.Error.WriteLine(
+                "TimeboxBell už běží (ikona v oznamovací oblasti nebo jiná konzolová aplikace) – druhá instance by zvonila podruhé.");
+            return AlreadyRunningExitCode;
+        }
+
         return Run(settings);
     }
 
@@ -49,6 +59,7 @@ internal static class Program
     {
         writer.WriteLine("Použití: TimeboxBell.Console [--list-schedule | --help]");
         writer.WriteLine("  bez argumentů      zvoní podle rozvrhu a brání uspání počítače; Ctrl+C ukončí");
+        writer.WriteLine("                     (když už TimeboxBell běží, skončí s návratovým kódem 3)");
         writer.WriteLine("  --list-schedule    vypíše rozvrh zvonění a skončí");
     }
 

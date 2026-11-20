@@ -10,6 +10,17 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
 
+        using var instance = SingleInstance.TryAcquire();
+        if (instance is null)
+        {
+            MessageBox.Show(
+                "TimeboxBell už běží (ikona v oznamovací oblasti nebo konzolová aplikace).\n\nDruhá instance by zvonila podruhé, proto se nespustí.",
+                "TimeboxBell",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            return 3;
+        }
+
         TimeboxBellSettings settings;
         try
         {
