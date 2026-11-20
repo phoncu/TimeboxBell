@@ -6,6 +6,8 @@
     <!-- Namespace nesmí být TimeboxBell.Console, jinak by zastínil System.Console. -->
     <RootNamespace>TimeboxBell.ConsoleApp</RootNamespace>
     <AssemblyName>TimeboxBell.Console</AssemblyName>
+    <!-- Ikona .exe (zástupce na ploše, Průzkumník); generuje ji build/make-icon.ps1. -->
+    <ApplicationIcon>..\TimeboxBell.ico</ApplicationIcon>
   </PropertyGroup>
 
   <!-- Publikace: jeden .exe včetně runtime, aby šel spustit na PC bez nainstalovaného .NET. -->

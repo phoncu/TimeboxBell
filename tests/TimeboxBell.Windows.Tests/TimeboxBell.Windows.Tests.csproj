@@ -23,6 +23,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\TimeboxBell.Windows\TimeboxBell.Windows.csproj" />
     <ProjectReference Include="..\..\src\TimeboxBell.Tray\TimeboxBell.Tray.csproj" />
+    <!-- Jen kvůli TimeboxBell.Console.exe ve výstupu (test vložené ikony). -->
+    <ProjectReference Include="..\..\src\TimeboxBell.Console\TimeboxBell.Console.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\src\TimeboxBell.ico" Link="TimeboxBell.ico" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>TimeboxBell.Tray</RootNamespace>
     <AssemblyName>TimeboxBell</AssemblyName>
+    <!-- Ikona .exe (zástupce na ploše, Průzkumník); generuje ji build/make-icon.ps1. -->
+    <ApplicationIcon>..\TimeboxBell.ico</ApplicationIcon>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
   </PropertyGroup>
 
