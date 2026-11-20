@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeboxBell.Windows", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeboxBell.Windows.Tests", "tests\TimeboxBell.Windows.Tests\TimeboxBell.Windows.Tests.csproj", "{07707777-282B-4B8F-B356-77FC040F2259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeboxBell.Console", "src\TimeboxBell.Console\TimeboxBell.Console.csproj", "{640CF0FE-EF8B-4213-B1A9-010D51247CD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{07707777-282B-4B8F-B356-77FC040F2259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07707777-282B-4B8F-B356-77FC040F2259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07707777-282B-4B8F-B356-77FC040F2259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{640CF0FE-EF8B-4213-B1A9-010D51247CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640CF0FE-EF8B-4213-B1A9-010D51247CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640CF0FE-EF8B-4213-B1A9-010D51247CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640CF0FE-EF8B-4213-B1A9-010D51247CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,5 +51,6 @@ Global
 		{51B983CD-D128-470C-98D9-A9BA396943DB} = {D97BD1E8-B750-4047-8459-3FAE0BF5DF6A}
 		{2AE798CD-9E14-404A-BBAB-3A058C2CE4DC} = {518F784F-CF3E-4A8E-997F-63BDB84BF7BB}
 		{07707777-282B-4B8F-B356-77FC040F2259} = {D97BD1E8-B750-4047-8459-3FAE0BF5DF6A}
+		{640CF0FE-EF8B-4213-B1A9-010D51247CD8} = {518F784F-CF3E-4A8E-997F-63BDB84BF7BB}
 	EndGlobalSection
 EndGlobal
