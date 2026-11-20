@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TimeboxBell.Windows\TimeboxBell.Windows.csproj" />
+    <ProjectReference Include="..\..\src\TimeboxBell.Tray\TimeboxBell.Tray.csproj" />
   </ItemGroup>
 
 </Project>

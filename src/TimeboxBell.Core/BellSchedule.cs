@@ -45,6 +45,26 @@ public sealed class BellSchedule
         new BellRule(55, BellType.PomodoroEnd),
     ]);
 
+    /// <summary>
+    /// Najde nejbližší zvonění po minutě, ve které leží <paramref name="localNow"/> (místní čas na
+    /// nástěnných hodinách). Vrátí <c>null</c>, pokud je rozvrh prázdný.
+    /// </summary>
+    public UpcomingBell? GetNext(DateTime localNow)
+    {
+        var minuteStart = new DateTime(
+            localNow.Year, localNow.Month, localNow.Day, localNow.Hour, localNow.Minute, 0, localNow.Kind);
+        for (var i = 1; i <= 60; i++)
+        {
+            var at = minuteStart.AddMinutes(i);
+            if (_byMinute[at.Minute] is { } type)
+            {
+                return new UpcomingBell(at, type);
+            }
+        }
+
+        return null;
+    }
+
     /// <summary>Vrátí druh zvonění pro danou minutu v hodině, nebo <c>null</c>, pokud v ní nic nezvoní.</summary>
     public BellType? GetBellForMinute(int minute)
     {

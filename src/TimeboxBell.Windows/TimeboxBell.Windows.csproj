@@ -15,6 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Výchozí nastavení vedle každého .exe; při single-file publikaci zůstane samostatným souborem. -->
+    <None Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TimeboxBell.Core\TimeboxBell.Core.csproj" />
   </ItemGroup>
 
